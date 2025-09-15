@@ -7,4 +7,5 @@ export default defineConfig({
   base: '/apple-store/',
   plugins: [react(), tailwindcss()],
   build: { emptyOutDir: true },
+  publicDir: 'public',
 });
