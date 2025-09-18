@@ -3,7 +3,7 @@ import { navLists } from './../constants/index';
 const Navbar = () => {
   return (
     <header className="flex w-full items-center justify-between bg-white/2.5 px-5 py-5 sm:px-10">
-      <nav className="screen-max-width flex w-full">
+      <nav className="screen-max-width flex w-full container">
         <img src={appleImg} alt="appleImg" width={18} height={18} />
         <ul className="flex flex-1 justify-center max-sm:hidden">
           {navLists.map((item, index) => (

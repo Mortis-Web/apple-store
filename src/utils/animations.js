@@ -1,12 +1,16 @@
 // utils/animations.js
 
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 export const animateWithGsap = (
   timeline,
   rotationRef,
   rotationState,
   firstTarget,
   secondTarget,
-  direction,
+  direction
 ) => {
   // rotate the active model
   timeline.to(rotationRef.current.rotation, {
@@ -20,7 +24,7 @@ export const animateWithGsap = (
     {
       x: direction === 'left' ? '-100%' : '100%',
       ease: 'power3.inOut',
-      duration:1.5,
+      duration: 1.5,
     },
     '<'
   );
@@ -34,4 +38,20 @@ export const animateWithGsap = (
     },
     '<'
   );
+};
+
+export const animateWithGsapScrollTrigger = (
+  target,
+  animProps,
+  scrollProps
+) => {
+  gsap.to(target, {
+    ...animProps,
+    scrollTrigger: {
+      trigger: target,
+      toggleActions: 'restart reverse restart reverse',
+      start: 'top 85%',
+      ...scrollProps,
+    },
+  });
 };

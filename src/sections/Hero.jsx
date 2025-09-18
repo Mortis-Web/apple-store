@@ -3,7 +3,9 @@ import gsap from 'gsap';
 import { useMediaQuery } from 'react-responsive';
 import SmoothVideo from '../components/SmoothVideo';
 import useInView from './../hooks/useInView';
+import { useEffect } from 'react';
 gsap.registerPlugin(useGSAP);
+
 
 const Hero = () => {
   const IsMobile = useMediaQuery({ maxWidth: 640 });
@@ -42,11 +44,43 @@ const Hero = () => {
         className="flex translate-y-20 flex-col items-center opacity-0"
       >
         <a href="#highlights" className="btn duration-300">
-          Buy
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            role="img"
+            aria-labelledby="cartTitle cartDesc"
+            focusable="false"
+          >
+            <title id="cartTitle">Shopping cart</title>
+            <desc id="cartDesc">Icon of a shopping cart with two wheels</desc>
+            <g
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.6a1 1 0 0 0 .98-.79L22 6H6" />
+              <circle
+                cx="8.5"
+                cy="20.5"
+                r="1.5"
+                fill="currentColor"
+                stroke="none"
+              />
+              <circle
+                cx="18"
+                cy="20.5"
+                r="1.5"
+                fill="currentColor"
+                stroke="none"
+              />
+            </g>
+          </svg>
+          Get Now
         </a>
-        <p className="text-gradient text-xl font-medium">
-          From $199/month or $999
-        </p>
       </div>
     </section>
   );

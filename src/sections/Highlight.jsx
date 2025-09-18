@@ -19,8 +19,8 @@ const Highlight = () => {
       opacity: 1,
       y: 0,
       duration: 1,
-      ease:'expo.out',
-      delay:0.5,
+      ease: 'expo.out',
+      delay: 0.5,
       stagger: 0.25,
     });
   }, [isInView]);
@@ -31,7 +31,7 @@ const Highlight = () => {
       id="highlight"
       className="common-padding bg-zinc h-full w-screen overflow-hidden"
     >
-      <div className="screen-max-width">
+      <div className="screen-max-width container">
         <article className="mb-12 w-full items-end justify-between md:flex">
           <h1
             id="title"
@@ -51,7 +51,7 @@ const Highlight = () => {
             </p>
           </span>
         </article>
-        <VideoCarousel isInView={isInView}/>
+        <VideoCarousel isInView={isInView} />
       </div>
     </section>
   );

@@ -39,12 +39,14 @@
 }
 
 .screen-max-width {
-  margin-inline-start: auto;
-  margin-inline-end: auto;
   position: relative;
-  max-width: 1120px;
+  margin-inline: auto;
 }
 
+@utility container {
+  max-width: 1280px;
+  margin-inline: auto;
+}
 @utility text-gradient {
   background: linear-gradient(to bottom, #ffffff, #898989);
   -webkit-background-clip: text;
@@ -64,7 +66,7 @@
   }
 
   .btn {
-    @apply bg-blue hover:text-blue hover:border-blue my-5 rounded-3xl border border-transparent px-5 py-2 hover:border hover:bg-transparent;
+    @apply my-3 flex items-center gap-2 rounded-2xl border border-white/35 shadow-2xl  bg-gradient-to-br from-blue-700 to-blue-400/80 px-15 py-2 font-semibold text-white drop-shadow-[0px_0px_60px] drop-shadow-blue-400 duration-300 hover:scale-110;
   }
 
   .color-container {
@@ -92,7 +94,7 @@
   }
 
   .feature-text-container {
-    @apply flex-center mt-10 w-full flex-col gap-5 md:mt-16 md:flex-row;
+    @apply flex-center w-full flex-col gap-5 md:flex-row;
   }
 
   .feature-video {
@@ -116,15 +118,15 @@
   }
 
   .hiw-title {
-    @apply text-center text-4xl font-semibold md:text-7xl;
+    @apply text-center text-4xl font-semibold md:text-6xl;
   }
 
   .hiw-subtitle {
-    @apply text-gray py-10 text-center text-xl font-semibold md:text-2xl;
+    @apply text-gray py-5 text-center text-xl font-semibold md:text-2xl;
   }
 
   .hiw-video {
-    @apply absolute h-[90%] w-[95%] overflow-hidden rounded-[56px];
+    @apply absolute h-[90%] w-[95%] overflow-hidden rounded-[20px] sm:rounded-[36px];
   }
 
   .hiw-text-container {
@@ -140,7 +142,7 @@
   }
 
   .video-carousel_container {
-    @apply relative h-[35vh] w-[88vw] sm:h-[50vh] sm:w-[70vw] md:h-[70vh];
+    @apply relative h-[35vh] max-h-[1280px] w-[88vw] sm:h-[50vh] sm:w-[70vw] md:h-[70vh];
   }
 
   .g_fadeIn {

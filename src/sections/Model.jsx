@@ -78,9 +78,12 @@ const Model = () => {
   return (
     <section ref={ref} className="common-padding overflow-hidden">
       <div className="screen-max-width">
+        <div className='container'>
+
         <h1 id="heading" className="section-heading text-gradient">
           Take A Closer Look.
         </h1>
+        </div>
         <div className="mt-5 flex flex-col items-center">
           <figure className="relative h-[50vh] w-full overflow-hidden md:h-[75vh]">
             <ModelView
