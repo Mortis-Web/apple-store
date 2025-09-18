@@ -16,11 +16,11 @@ export const blueImg = import.meta.env.BASE_URL + 'assets/images/blue.webp';
 export const whiteImg = import.meta.env.BASE_URL + 'assets/images/white.webp';
 export const blackImg = import.meta.env.BASE_URL + 'assets/images/black.webp';
 export const explore1Img =
-  import.meta.env.BASE_URL + 'assets/images/explore1.jpg';
+  import.meta.env.BASE_URL + 'assets/images/explore1.webp';
 export const explore2Img =
-  import.meta.env.BASE_URL + 'assets/images/explore2.jpg';
-export const chipImg = import.meta.env.BASE_URL + 'assets/images/chip.jpeg';
-export const frameImg = import.meta.env.BASE_URL + 'assets/images/frame.png';
+  import.meta.env.BASE_URL + 'assets/images/explore2.webp';
+export const chipImg = import.meta.env.BASE_URL + 'assets/images/chip.webp';
+export const frameImg = import.meta.env.BASE_URL + 'assets/images/frame.webp';
 
 // Videos
 export const heroVideo = import.meta.env.BASE_URL + 'assets/videos/hero.webm';
