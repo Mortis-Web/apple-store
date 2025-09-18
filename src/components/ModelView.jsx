@@ -14,7 +14,7 @@ useTexture.preload(`${import.meta.env.BASE_URL}assets/images/poster.webp`);
 
 // ✅ preload all textures at module scope
 models.forEach(item => {
-  useTexture.preload(`${import.meta.env.BASE_URL}${item.img}`);
+  useTexture.preload(item.img);
 });
 // ✅ Lazy import
 const PhoneModel = lazy(() => import('./PhoneModel'));
