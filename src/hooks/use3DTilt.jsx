@@ -13,27 +13,24 @@ const use3DTilt = (selector = '.tilt-wrapper') => {
       if (!card) return;
 
       const handleMouseMove = e => {
-        const { left, top, width, height } = wrapper.getBoundingClientRect();
+        const { left, width } = wrapper.getBoundingClientRect();
 
         // Disable transition while moving
         card.style.transition = 'none';
 
         const x = e.clientX - left;
-        const y = e.clientY - top;
-
         const centeredX = x / width - 0.5;
-        const centeredY = y / height - 0.5;
 
-        const rotateX = Math.max(Math.min(centeredY * -20, 20), -20);
+        // Only rotate left/right
         const rotateY = Math.max(Math.min(centeredX * -20, 20), -20);
 
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.transform = `rotateY(${rotateY}deg)`;
       };
 
       const handleMouseLeave = () => {
         // Smooth reset to neutral
         card.style.transition = 'all 2s cubic-bezier(0.4, 0, 0.2, 1)';
-        card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        card.style.transform = `rotateY(0deg)`;
       };
 
       wrapper.addEventListener('mousemove', handleMouseMove);

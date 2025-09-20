@@ -12,13 +12,16 @@ const Features = () => {
   const [ref, isInView] = useInView();
 
   useGSAP(() => {
-    if (!isInView) return;
-    gsap.to('#features_title', {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power1.inOut',
-    });
+    if (isInView) {
+      gsap.to('#features_title', {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power1.inOut',
+      });
+    } else {
+      return null;
+    }
 
     gsap.to('#exploreVideo', {
       scrollTrigger: {
@@ -39,7 +42,7 @@ const Features = () => {
         duration: 0.25,
         ease: 'power1',
       },
-      { scrub: 5.5 }
+      { scrub: 5 }
     );
 
     animateWithGsapScrollTrigger('.g_text', {
@@ -81,8 +84,7 @@ const Features = () => {
               <video
                 playsInline
                 id="exploreVideo"
-                preload="none"
-                // autoPlay
+                preload="metadata"
                 muted
                 ref={videoRef}
                 className="h-full w-full rounded-xl object-cover object-center"

@@ -11,20 +11,20 @@ const SmoothVideo = ({ IsMobile, isInView }) => {
     setVideoSrc(IsMobile ? smallHeroVideo : heroVideo);
   }, [IsMobile]);
 
-  useEffect(() => {
-    const video = HeroVideoRef.current;
-    if (!video || IsMobile) return;
+  // useEffect(() => {
+  //   const video = HeroVideoRef.current;
+  //   if (!video || IsMobile) return;
 
-    const loopSeconds = 2.7; // last N seconds to loop
+  //   const loopSeconds = 2.7; // last N seconds to loop
 
-    const handleEnded = () => {
-      video.currentTime = Math.max(0, video.duration - loopSeconds);
-      video.play();
-    };
+  //   const handleEnded = () => {
+  //     video.currentTime = Math.max(0, video.duration - loopSeconds);
+  //     video.play();
+  //   };
 
-    video.addEventListener('ended', handleEnded);
-    return () => video.removeEventListener('ended', handleEnded);
-  }, [IsMobile]);
+  //   video.addEventListener('ended', handleEnded);
+  //   return () => video.removeEventListener('ended', handleEnded);
+  // }, [IsMobile]);
 
   return (
     <video

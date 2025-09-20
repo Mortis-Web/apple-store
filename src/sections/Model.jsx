@@ -10,8 +10,6 @@ import { animateWithGsap } from '../utils/animations';
 import { models, sizes } from './../constants/index';
 import useInView from './../hooks/useInView';
 
-
-
 const Model = () => {
   const [ref, isInView] = useInView();
 
@@ -78,11 +76,10 @@ const Model = () => {
   return (
     <section ref={ref} className="common-padding overflow-hidden">
       <div className="screen-max-width">
-        <div className='container'>
-
-        <h1 id="heading" className="section-heading text-gradient">
-          Take A Closer Look.
-        </h1>
+        <div className="container">
+          <h1 id="heading" className="section-heading text-gradient">
+            Take A Closer Look.
+          </h1>
         </div>
         <div className="mt-5 flex flex-col items-center">
           <figure className="relative h-[50vh] w-full overflow-hidden md:h-[75vh]">
@@ -118,7 +115,9 @@ const Model = () => {
           </figure>
 
           <div className="mx-auto w-full">
-            <p className="mb-5 text-center text-gradient text-sm font-medium">{model.title}</p>
+            <p className="text-gradient mb-5 text-center text-sm font-medium">
+              {model.title}
+            </p>
             <div className="flex-center">
               <ul className="color-container">
                 {models.map((item, index) => (

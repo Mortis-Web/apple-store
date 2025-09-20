@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import useInView from '../hooks/useInView';
-import { chipImg, frameImg, frameVideo } from '../utils';
+import { chipImg, frameImg, frameVideo, HIWposter } from '../utils';
 import { animateWithGsapScrollTrigger } from '../utils/animations';
 
 const HowItWorks = () => {
@@ -22,16 +22,24 @@ const HowItWorks = () => {
       ease: 'power2.inOut',
     });
 
-    gsap.to('#hiwVideo', {
-      scrollTrigger: {
-        trigger: '#hiwVideo',
-        toggleActions: 'play pause reverse restart',
-        start: '-50% bottom',
-      },
-      onComplete: () => {
-        videoRef.current.play();
-      },
-    });
+    gsap.fromTo(
+      '#hiwVideo',
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#hiwVideo',
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            if (videoRef.current) {
+              videoRef.current.play();
+            }
+          },
+        },
+      }
+    );
 
     animateWithGsapScrollTrigger('.g_fadeIn', {
       y: 0,
@@ -81,9 +89,10 @@ const HowItWorks = () => {
                 id="hiwVideo"
                 className="pointer-events-none"
                 playsInline
-                preload="none"
+                preload="metadata"
                 muted
                 autoPlay
+                poster={HIWposter}
                 ref={videoRef}
               >
                 <source src={frameVideo} type="video/webm" />

@@ -22,6 +22,9 @@ export const explore2Img =
 export const chipImg = import.meta.env.BASE_URL + 'assets/images/chip.webp';
 export const frameImg = import.meta.env.BASE_URL + 'assets/images/frame.webp';
 
+export const HIWposter =
+  import.meta.env.BASE_URL + 'assets/images/hiwPoster.webp';
+
 // Videos
 export const heroVideo = import.meta.env.BASE_URL + 'assets/videos/hero.webm';
 export const smallHeroVideo =
