@@ -182,17 +182,19 @@ const VideoCarousel = ({ isInView }) => {
                   onLoadedMetadata={handleLoadedMetaData}
                   onEnded={() => handleProcess('video-end', index)}
                   className={`video video-${index} ${
-                    slide.id === 2 ? 'translate-x-44' : ''
+                    slide.id === 2
+                      ? 'translate-x-18 object-contain object-center sm:translate-x-44'
+                      : 'h-full w-full object-cover'
                   } pointer-events-none`}
                 >
                   <source src={slide.video} type="video/webm" />
                 </video>
               </figure>
-              <div className="absolute top-12 left-[5%] z-10">
+              <div className="xs:left-[5%] absolute top-6 z-10 sm:top-12">
                 {slide.textLists.map(text => (
                   <p
                     key={text}
-                    className={`videoTitle-${index} text-gradient translate-x-10 translate-y-20 py-1 text-xl font-medium capitalize opacity-0 md:text-3xl`}
+                    className={`videoTitle-${index} text-gradient translate-x-10 translate-y-20 py-1 text-sm font-medium capitalize opacity-0 sm:text-xl md:text-3xl`}
                   >
                     {text}
                   </p>

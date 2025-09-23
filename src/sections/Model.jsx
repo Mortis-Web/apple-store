@@ -115,10 +115,10 @@ const Model = () => {
           </figure>
 
           <div className="mx-auto w-full">
-            <p className="text-gradient mb-5 text-center text-sm font-medium">
+            <p className="text-gradient mb-5 text-center text-[1rem] font-semibold">
               {model.title}
             </p>
-            <div className="flex-center">
+            <div className="flex-center scale-90 xs:scale-100">
               <ul className="color-container">
                 {models.map((item, index) => (
                   <li

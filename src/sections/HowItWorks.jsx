@@ -57,8 +57,8 @@ const HowItWorks = () => {
           <img
             src={chipImg}
             alt="chipImg"
-            width={220}
-            height={220}
+            width={210}
+            height={210}
             loading="lazy"
           />
         </div>

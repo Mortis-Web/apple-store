@@ -32,7 +32,7 @@ const Highlight = () => {
       className="common-padding bg-zinc h-full w-screen overflow-hidden"
     >
       <div className="screen-max-width container">
-        <article className="mb-12 w-full items-end justify-between md:flex">
+        <article className="mb-12 w-full items-center justify-between gap-6 md:flex">
           <h1
             id="title"
             className="section-heading text-gradient pb-2.5 capitalize"
@@ -40,7 +40,7 @@ const Highlight = () => {
             get the highlights.
           </h1>
 
-          <span className="flex flex-wrap items-end gap-5">
+          <span className="flex flex-wrap items-end gap-2 xs:gap-5">
             <p className="link">
               Watch The Film{' '}
               <img src={watchImg} alt="watchImg" className="ml-2" />

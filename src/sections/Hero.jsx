@@ -3,9 +3,7 @@ import gsap from 'gsap';
 import { useMediaQuery } from 'react-responsive';
 import SmoothVideo from '../components/SmoothVideo';
 import useInView from './../hooks/useInView';
-import { useEffect } from 'react';
 gsap.registerPlugin(useGSAP);
-
 
 const Hero = () => {
   const IsMobile = useMediaQuery({ maxWidth: 640 });
@@ -20,8 +18,8 @@ const Hero = () => {
     });
     gsap.to('#cta', {
       opacity: 1,
-      y: IsMobile ? -50 : -100,
-      scale: 1.25,
+      y: IsMobile ? -30 : -100,
+      scale: IsMobile ? 1 : 1.25,
       duration: 0.75,
       delay: 1.75,
       ease: 'power1.inOut',
