@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
 import useInView from '../hooks/useInView';
-import { explore1Img, explore2Img, exploreVideo } from '../utils';
+import { explore1Img, explore2Img, exploreVideo, HIWposter } from '../utils';
 import { animateWithGsapScrollTrigger } from '../utils/animations';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,6 +86,7 @@ const Features = () => {
                 id="exploreVideo"
                 preload="metadata"
                 muted
+                poster={HIWposter}
                 ref={videoRef}
                 className="h-full w-full rounded-xl object-cover object-center"
               >

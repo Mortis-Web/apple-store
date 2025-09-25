@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import useInView from '../hooks/useInView';
-import { chipImg, frameImg, frameVideo, HIWposter } from '../utils';
+import { chipImg, frameImg, frameVideo } from '../utils';
 import { animateWithGsapScrollTrigger } from '../utils/animations';
 
 const HowItWorks = () => {
@@ -92,7 +92,6 @@ const HowItWorks = () => {
                 preload="metadata"
                 muted
                 autoPlay
-                poster={HIWposter}
                 ref={videoRef}
               >
                 <source src={frameVideo} type="video/webm" />
