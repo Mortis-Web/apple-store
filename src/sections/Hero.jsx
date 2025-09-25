@@ -18,7 +18,7 @@ const Hero = () => {
     });
     gsap.to('#cta', {
       opacity: 1,
-      y: IsMobile ? -30 : -100,
+      y: IsMobile ? -40 : -100,
       scale: IsMobile ? 1 : 1.25,
       duration: 0.75,
       delay: 1.75,
