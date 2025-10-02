@@ -259,6 +259,10 @@ const ProductCarousel = () => {
     <section
       ref={ref}
       className={`carousel ${isDetailed ? 'showDetails' : ''}`}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Product Carousel"
+      aria-live="polite"
       onTouchStart={e => handleStart(e.touches[0].clientX)}
       onTouchMove={e => handleMove(e.touches[0].clientX)}
       onTouchEnd={e => handleEnd(e.changedTouches[0].clientX)}
@@ -297,6 +301,7 @@ const ProductCarousel = () => {
                 }
               }}
               aria-hidden={!isActive}
+              aria-label={`Slide ${i + 1} of ${products.length}`}
               className={`item ${isActive ? 'active' : ''}`}
               onMouseEnter={
                 isActive ? () => clearInterval(autoPlayRef.current) : null
@@ -312,12 +317,20 @@ const ProductCarousel = () => {
                 <button
                   className="seeMore btn"
                   onClick={() => handleSeeMore(p.id)}
+                  aria-expanded={isDetailed === p.id}
+                  aria-controls={`detail-${p.id}`}
                 >
                   See More
                 </button>
               </div>
 
-              <div className="detail">
+              <div
+                className="detail"
+                id={`detail-${p.id}`}
+                role="region"
+                aria-label={`Details for ${p.title}`}
+                hidden={isDetailed !== p.id}
+              >
                 <div className="dTitle text-gradient">{p.detailTitle}</div>
                 <div className="dDes">{p.longDesc}</div>
 
@@ -362,6 +375,7 @@ const ProductCarousel = () => {
             setIsDetailed(null);
             // resetAutoPlay will run inside the isDetailed effect's "close" branch
           }}
+          aria-label="Return to carousel"
         >
           Return Back
         </button>
@@ -371,6 +385,7 @@ const ProductCarousel = () => {
             id="prev"
             disabled={disabled}
             onClick={() => slideItems('prev')}
+            aria-label="Previous slide"
           >
             <svg
               className="rotate-180"
@@ -395,6 +410,7 @@ const ProductCarousel = () => {
             id="next"
             disabled={disabled}
             onClick={() => slideItems('next')}
+            aria-label="Next slide"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
