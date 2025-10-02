@@ -40,3 +40,22 @@ export const highlightFourthVideo =
 export const exploreVideo =
   import.meta.env.BASE_URL + 'assets/videos/explore.webm';
 export const frameVideo = import.meta.env.BASE_URL + 'assets/videos/frame.webm';
+
+// video posters
+export const slidePosterOne =
+  import.meta.env.BASE_URL + 'assets/images/slider1.webp';
+
+export const slidePosterTwo =
+  import.meta.env.BASE_URL + 'assets/images/slider2.webp';
+export const slidePosterThree =
+  import.meta.env.BASE_URL + 'assets/images/slider3.webp';
+export const slidePosterFour =
+  import.meta.env.BASE_URL + 'assets/images/slider4.webp';
+
+// product carousel
+export const img1 = `${import.meta.env.BASE_URL}assets/images/img1.webp`;
+export const img2 = `${import.meta.env.BASE_URL}assets/images/img2.webp`;
+export const img3 = `${import.meta.env.BASE_URL}assets/images/img3.webp`;
+export const img4 = `${import.meta.env.BASE_URL}assets/images/img4.webp`;
+export const img5 = `${import.meta.env.BASE_URL}assets/images/img5.webp`;
+export const img6 = `${import.meta.env.BASE_URL}assets/images/img6.webp`;

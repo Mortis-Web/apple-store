@@ -118,7 +118,7 @@ const Model = () => {
             <p className="text-gradient mb-5 text-center text-[1rem] font-semibold">
               {model.title}
             </p>
-            <div className="flex-center scale-90 xs:scale-100">
+            <div className="flex-center xs:scale-100 scale-90">
               <ul className="color-container">
                 {models.map((item, index) => (
                   <li

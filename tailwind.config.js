@@ -14,6 +14,9 @@ export default {
     },
 
     extend: {
+      animation: {
+        showContent: 'showContent 0.5s ease-in-out forwards',
+      },
       colors: {
         blue: '#2997FF',
         gray: {

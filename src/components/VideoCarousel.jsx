@@ -10,11 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const VideoCarousel = ({ isInView }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const containerRef = useRef(null);
   const videoRef = useRef([]);
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
-  const tickerRef = useRef(null);
   const [loadedData, setLoadedData] = useState([]);
   const [video, setVideo] = useState({
     isEnd: false,

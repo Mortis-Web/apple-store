@@ -5,6 +5,7 @@ import Hero from '../sections/Hero';
 import Highlight from '../sections/Highlight';
 import HowItWorks from '../sections/HowItWorks';
 import Model from '../sections/Model';
+import ProductCarousel from '../sections/ProductCarousel';
 const HomePage = () => {
   return (
     <main>
@@ -12,9 +13,10 @@ const HomePage = () => {
       <Hero />
       <Highlight />
       <Model />
+      <ProductCarousel />
       <Features />
       <HowItWorks />
-      <Footer/>
+      <Footer />
     </main>
   );
 };

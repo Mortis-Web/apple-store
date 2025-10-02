@@ -91,6 +91,7 @@ const HowItWorks = () => {
                 playsInline
                 preload="metadata"
                 muted
+                poster={`${import.meta.env.BASE_URL}assets/images/Honaki.webp`}
                 autoPlay
                 ref={videoRef}
               >

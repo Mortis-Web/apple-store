@@ -33,7 +33,11 @@ const SmoothVideo = ({ IsMobile, isInView }) => {
       autoPlay
       key={videoSrc}
       preload="auto"
-      poster={`${import.meta.env.BASE_URL}assets/images/poster.webp`}
+      poster={
+        IsMobile
+          ? `${import.meta.env.BASE_URL}assets/images/mobilePoster.webp`
+          : `${import.meta.env.BASE_URL}assets/images/poster.webp`
+      }
       ref={HeroVideoRef}
       className="tilt"
       crossOrigin="anonymous"

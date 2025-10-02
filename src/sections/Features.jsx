@@ -70,7 +70,7 @@ const Features = () => {
         </div>
 
         <article className="flex-center flex-col overflow-hidden">
-          <div className="xs:mt-32 mt-24 mb-24 text-center">
+          <div className="xs:mt-32 max-xs:hidden mt-24 mb-24 text-center">
             <h2 className="text-gradient text-5xl font-semibold lg:text-7xl">
               iPhone
             </h2>
