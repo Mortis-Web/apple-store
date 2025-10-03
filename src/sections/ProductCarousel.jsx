@@ -4,6 +4,9 @@ import { products } from '../constants';
 import useInView from './../hooks/useInView';
 
 const AUTO_DELAY = 3000;
+const isMobile =
+  /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+  ('ontouchstart' in window && navigator.maxTouchPoints > 0);
 
 const ProductCarousel = () => {
   const [ref, isInView] = useInView();
@@ -118,24 +121,42 @@ const ProductCarousel = () => {
     }, AUTO_DELAY);
   };
 
-  // keyboard handler
+  // keyboard/mobile handler
   useEffect(() => {
     if (!isInView) return;
-    const handleKeyDown = e => {
-      if (disabled) return;
-      if (isDetailed === null) {
-        if (e.key === 'ArrowRight') slideItems('next');
-        if (e.key === 'ArrowLeft') slideItems('prev');
-      } else {
-        if (e.key === 'Escape' || e.key === 'Backspace') {
+
+    if (isMobile) {
+      // 📱 MOBILE → back button handling
+      const handlePopState = () => {
+        if (disabled) return;
+        if (isDetailed !== null) {
           setIsDetailed(null);
           resetAutoPlay();
         }
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [disabled, isDetailed, isInView]); // positions not required here
+      };
+
+      window.addEventListener('popstate', handlePopState);
+      return () => window.removeEventListener('popstate', handlePopState);
+    } else {
+      // 💻 DESKTOP → keyboard handling
+      const handleKeyDown = e => {
+        if (disabled) return;
+
+        if (isDetailed === null) {
+          if (e.key === 'ArrowRight') slideItems('next');
+          if (e.key === 'ArrowLeft') slideItems('prev');
+        } else {
+          if (e.key === 'Escape' || e.key === 'Backspace') {
+            setIsDetailed(null);
+            resetAutoPlay();
+          }
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [disabled, isDetailed, isInView]);
 
   // start autoplay when positions change (initial + slide)
   useEffect(() => {
